@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Mundo - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <h1>Alfa Mundo</h1>
+            <nav>
+                <ul class="nav-desktop">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                <ul class="nav-mobile hidden">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="section">
+        <div class="container">
+            <h2>Bienvenidos a Alfa Mundo</h2>
+        <p>En Alfa Mundo nos apasiona crear experiencias culinarias únicas para todos ustedes. Somos una empresa dedicada a la elaboración de deliciosas comidas listas para disfrutar y compartirlas con quienes más queremos. Desde platos tradicionales hasta creaciones innovadoras, cada receta está cuidadosamente diseñada para llevar sabor y calidad a su mesa.</p>
+        <p>Nos encanta compartir nuestra pasión por la buena comida no solo a través de nuestros productos, sino también en nuestras redes sociales. Pueden encontrarnos en nuestras plataformas digitales donde compartimos videos exclusivos de recetas que inspiran y deleitan:</p>
+        <ul class="social-links">
+            <li><a href="https://www.youtube.com/@Alfa_Mundo_" target="_blank">YouTube</a></li>
+            <li><a href="https://www.instagram.com/alfa_mundo_" target="_blank">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@alfa.mundo" target="_blank">TikTok</a></li>
+        </ul>
+        <p>Únanse a nuestra comunidad gastronómica y descubran nuevas ideas para cocinar con nosotros. ¡Prepárense para llenar sus cocinas de aroma y sabor!</p>
+        <p>Muchas gracias por acompañarnos. ¡Nos vemos en el próximo video!</p>
+            </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Acerca de Nosotros</h2>
+            <p>Información sobre la historia y misión de la empresa...</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Detalles sobre los servicios que ofrecemos...</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Formulario de contacto o información de contacto...</p>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 Alfa Mundo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

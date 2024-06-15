@@ -1,0 +1,258 @@
+:root {
+    --header-height: 60px;
+    --footer-height: 40px;
+    --primary-color: #e4bd80;
+    --secondary-color: #f4f4f4;
+    --logo-height: 100px; /* Altura total del logo */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.logo img {
+    height: var(--logo-height);
+    position: relative;
+    top: calc(var(--header-height) / 2);
+    z-index: 2000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-height);
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+main {
+    padding: var(--header-height) 20px var(--footer-height);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--logo-height) / 2));
+    overflow-y: auto;
+}
+
+.menu {
+    display: flex;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.nav-link:hover {
+    color: #d8828f; /* Nuevo color al hacer hover */
+    text-decoration: none; /* Quitamos el subrayado original */
+    background-image: linear-gradient(to right, #d8828f 50%, transparent 50%);
+    background-size: 200% 100%; /* Ancho del gradiente para cubrir el texto */
+    background-position: 100%; /* Comienza desde la derecha */
+}
+
+.nav-link:hover::after {
+    content: ''; /* Pseudo-elemento para el efecto de subrayado */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Ajustar la posición del subrayado */
+    width: 100%;
+    height: 2px;
+    background-color: #d8828f; /* Color del subrayado */
+    transition: background-position 0.3s ease; /* Animación del subrayado */
+}
+
+.nav-link:hover::after {
+    background-position: 0; /* Mueve el subrayado de derecha a izquierda */
+}
+
+.content {
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido en la página */
+}
+
+.content a {
+    color: var(--primary-color); /* Color de texto similar al del menú */
+    text-decoration: none; /* Quitamos el subrayado predeterminado */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.content a:hover {
+    color: #d8828f; /* Nuevo color al hacer hover, similar al menú */
+}
+
+.content p{
+    text-align: center;
+}
+
+/* Estilo para todos los títulos de sección */
+h1, h2, h3 {
+    margin-top: 30px; /* Separación superior más amplia */
+    margin-bottom: 20px; /* Separación inferior */
+    font-weight: bold; /* Negrita para todos los títulos */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Estilo específico para h1 */
+h1 {
+    font-size: 2.5rem; /* Tamaño grande para el título principal */
+    color: var(--primary-color); /* Color principal */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin-bottom: 30px; /* Mayor separación inferior */
+    position: relative; /* Posición relativa para pseudoelementos */
+}
+
+/* Pseudoelementos para decoración */
+h1::before, h1::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    width: 50%; /* Ancho del 50% */
+    background-color: var(--primary-color); /* Color principal */
+    top: 50%; /* Ubicación vertical centrada */
+    transform: translateY(-50%); /* Ajuste de posición */
+}
+
+/* Estilo para h2 */
+h2 {
+    font-size: 2rem; /* Tamaño medio para subtítulos */
+    color: #333; /* Color más oscuro */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo para h3 */
+h3 {
+    font-size: 1.5rem; /* Tamaño menor para títulos de sección */
+    color: #555; /* Color más suave */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrado horizontal */
+    margin-top: 15px; /* Espacio más amplio sobre de cada enlace */
+    margin-bottom: 15px; /* Espacio más amplio debajo de cada enlace */
+    margin-left: 20px; /* Margen izquierdo más razonable */
+    text-align: center; /* Alineación del texto centrada */
+}
+
+.link-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color); /* Color del texto similar al del menú */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.link-container a:hover {
+    color: #d8828f; /* Nuevo color al hacer hover, similar al menú */
+}
+
+.link-logo {
+    width: 30px; /* Tamaño adecuado para la imagen del logo */
+    height: auto; /* Altura automática según la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+.link-logo {
+    width: 30px; /* Tamaño adecuado para la imagen del logo */
+    height: auto; /* Altura automática según la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para la sección de productos */
+.product {
+    width: 30%; /* Ancho relativo de cada producto */
+    margin-bottom: 30px; /* Espacio entre productos */
+    text-align: center; /* Alineación del texto centrada */
+    box-sizing: border-box; /* El tamaño total incluye el padding y el border */
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Envuelve los elementos en varias líneas */
+    justify-content: space-around; /* Espacio alrededor de los elementos */
+}
+
+.product .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.product .product-price {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #e4bd80; /* Color amarillo definido en :root */
+    font-size: 1.2rem;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    .nav-link {
+        margin: 10px 0;
+    }
+
+    .menu {
+        width: 90%; /* Ajuste adicional del ancho del menú */
+        align-items: center; /* Centrar elementos en modo columna */
+        justify-content: space-around; /* Distribuir equitativamente los elementos */
+    }
+
+    .menu a{
+        margin: 7px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .product {
+        width: 100%; /* En dispositivos más pequeños, mostrar en una sola columna */
+    }
+}
+
+/* Estilos para desktop */
+@media (min-width: 769px) {
+    body {
+        zoom: 150%; /* Escala inicial del 150% en modo desktop */
+    }
+}
